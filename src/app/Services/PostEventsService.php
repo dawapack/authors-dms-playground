@@ -7,7 +7,7 @@ namespace AuthorsDMS\Services;
 use Chassis\Framework\Adapters\Message\InboundMessageInterface;
 use Chassis\Framework\Logger\Logger;
 
-class DemoDeleteEventService
+class PostEventsService
 {
     /**
      * Nobody cares about implementation
@@ -21,14 +21,14 @@ class DemoDeleteEventService
     public function __invoke(InboundMessageInterface $message): void
     {
         Logger::info(
-            "got event - DemoDeleteEventService::__invoke()",
+            'got event from posts microservices',
             [
-                "component" => "application_info",
-                "message" => [
+                'component' => 'author_events_service_info',
+                'message' => [
                     'properties' => $message->getProperties(),
                     'headers' => $message->getHeaders(),
-                    'body' => $message->getBody(),
-                ]
+                    'payload' => $message->getBody(),
+                ],
             ]
         );
     }

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace AuthorsDMS\Config;
 
 return [
@@ -54,17 +56,17 @@ return [
     */
     'worker' => [
         'channels' => [
-            'inbound/commands' => [
+            'authors/inbound/commands' => [
                 'minimum' => 10,
                 'maximum' => 50,
                 'enabled' => true,
             ],
-            'inbound/responses' => [
+            'authors/inbound/responses' => [
                 'minimum' => 3,
                 'maximum' => 50,
                 'enabled' => true,
             ],
-            'inbound/events' => [
+            'authors/inbound/events' => [
                 'minimum' => 3,
                 'maximum' => 50,
                 'enabled' => true,

@@ -16,8 +16,19 @@ class ApplicationMessage implements ApplicationMessageInterface
      */
     public function __construct(array $body, array $headers = [])
     {
-        $this->payload["items"] = [$body];
+        $this->payload["items"] = $this->isArrayAssociative($body) ? [$body] : $body;
         $this->headers = $headers;
+    }
+
+    /**
+     * @param array $array
+     *
+     * @return bool
+     */
+    public function isArrayAssociative(array $array): bool
+    {
+        $keys = array_keys($array);
+        return $keys !== array_keys($keys);
     }
 
     /**

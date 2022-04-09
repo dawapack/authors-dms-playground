@@ -1,5 +1,7 @@
 <?php
 
+namespace AuthorsDMS\Config;
+
 return [
     'connection' => 'amqp',
     'contract' => 'asyncapi',

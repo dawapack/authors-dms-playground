@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace AuthorsDMS\Config;
 
 use function Chassis\Helpers\env;
